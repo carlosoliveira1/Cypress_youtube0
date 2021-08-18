@@ -1,5 +1,8 @@
 /// <reference types="Cypress" />
 
+import Logon from '../support/pages/Logon';
+
+
 
 
 
@@ -30,16 +33,19 @@ describe('Ongs', () => {
 
     });
 
-    it('Deve poder realizar um login no sistema', () => {
+    it.only('Deve poder realizar um login no sistema', () => {
 
         // const createOngId = Cypress.env('createdOngId');
 
 
         //  cy.log(createdOngId);
 
-        cy.visit('http://localhost:3000');
-        cy.get('input').type(Cypress.env('createdOngId'));
-        cy.get('.button').click();
+        // cy.visit('http://localhost:3000');
+        // cy.get('input').type(Cypress.env('createdOngId'));
+        // cy.get('.button').click();
+
+        Logon.acessarLogin();
+        Logon.preencherLogin();
 
 
     });
