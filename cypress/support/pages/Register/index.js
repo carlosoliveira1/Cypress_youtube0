@@ -9,17 +9,17 @@ class Register {
     }
 
     preencherCadastro() {
-        cy.get('[data-cy=name]').type('Dogs queridos');
-        cy.get('[data-cy=email]').type('dogs@mail.com');
-        cy.get('[data-cy=whatsapp]').type('9999999999');
-        cy.get('[data-cy=city]').type('Nova iguaçu');
-        cy.get('[data-cy=uf]').type('RJ');
+        cy.get(el.name).type('Dogs queridos');
+        cy.get(el.email).type('dogs@mail.com');
+        cy.get(el.whatsapp).type('9999999999');
+        cy.get(el.city).type('Nova iguaçu');
+        cy.get(el.uf).type('RJ');
 
 
         cy.route('POST', '**/ongs',).as('postOng');
 
 
-        cy.get('[data-cy=submit]').click();
+        cy.get(el.submit).click();
 
 
 
