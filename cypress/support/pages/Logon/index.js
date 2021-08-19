@@ -1,4 +1,5 @@
 
+const el = require('./elements').ELEMENTS;
 
 class Logon {
     acessarLogin(){
@@ -8,8 +9,8 @@ class Logon {
     }
 
     preencherLogin(){
-        cy.get('input').type(Cypress.env('createdOngId'));
-        cy.get('.button').click();
+        cy.get(el.id).type(Cypress.env('createdOngId'));
+        cy.get(el.buttonLogin).click();
 
     }
 
