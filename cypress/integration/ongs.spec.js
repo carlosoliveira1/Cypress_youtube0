@@ -1,39 +1,47 @@
 /// <reference types="Cypress" />
 
 import Logon from '../support/pages/Logon';
+import Register from '../support/pages/Register';
 
 
 
 
 
-describe('Ongs', () => {
+
+describe.only('Ongs', () => {
     it('Devem pode realizar um cadastro', () => {
-        cy.visit('http://localhost:3000/register');
-        cy.get('[data-cy=name]').type('Dogs queridos');
-        cy.get('[data-cy=email]').type('dogs@mail.com');
-        cy.get('[data-cy=whatsapp]').type('9999999999');
-        cy.get('[data-cy=city]').type('Nova iguaçu');
-        cy.get('[data-cy=uf]').type('RJ');
+        // cy.visit('http://localhost:3000/register');
+        // cy.get('[data-cy=name]').type('Dogs queridos');
+        // cy.get('[data-cy=email]').type('dogs@mail.com');
+        // cy.get('[data-cy=whatsapp]').type('9999999999');
+        // cy.get('[data-cy=city]').type('Nova iguaçu');
+        // cy.get('[data-cy=uf]').type('RJ');
 
 
-        cy.route('POST', '**/ongs',).as('postOng');
+        // cy.route('POST', '**/ongs',).as('postOng');
 
 
-        cy.get('[data-cy=submit]').click();
+        // cy.get('[data-cy=submit]').click();
 
-        cy.wait('@postOng').then((xhr) => {
-            expect(xhr.status).be.eq(200);
-            expect(xhr.response.body).has.property('id');
-            expect(xhr.response.body.id).is.not.null;
+        // cy.wait('@postOng').then((xhr) => {
+        //     expect(xhr.status).be.eq(200);
+        //     expect(xhr.response.body).has.property('id');
+        //     expect(xhr.response.body.id).is.not.null;
 
 
-        })
+        // })
+
+        Register.acessarCadastro();
+        Register.preencherCadastro();
+        Register.validarCadastroDeOngComSucesso();
+
+         
 
 
 
     });
 
-    it.only('Deve poder realizar um login no sistema', () => {
+    it('Deve poder realizar um login no sistema', () => {
 
         // const createOngId = Cypress.env('createdOngId');
 
