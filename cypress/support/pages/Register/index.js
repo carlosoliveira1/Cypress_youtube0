@@ -5,7 +5,6 @@ class Register {
     acessarCadastro() {
         cy.visit('http://localhost:3000/register');
 
-
     }
 
     preencherCadastro() {
@@ -20,6 +19,7 @@ class Register {
 
 
         cy.get(el.submit).click();
+
 
 
 

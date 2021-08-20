@@ -8,8 +8,8 @@ import Register from '../support/pages/Register';
 
 
 
-describe.only('Ongs', () => {
-    it('Devem pode realizar um cadastro', () => {
+describe('Ongs', () => {
+    it.only('Devem pode realizar um cadastro', () => {
         Register.acessarCadastro();
         Register.preencherCadastro();
         Register.validarCadastroDeOngComSucesso();
