@@ -2,14 +2,14 @@
 
 import Logon from '../support/pages/Logon';
 import Register from '../support/pages/Register';
-
+import Profile from '../support/pages/Profile';
 
 
 
 
 
 describe('Ongs', () => {
-    it.only('Devem pode realizar um cadastro', () => {
+    it('Devem pode realizar um cadastro', () => {
         Register.acessarCadastro();
         Register.preencherCadastro();
         Register.validarCadastroDeOngComSucesso();
@@ -20,9 +20,10 @@ describe('Ongs', () => {
         Logon.preencherLogin();
     });
 
-    it('devem poder fazer logout', () => {
+    it.only('devem poder fazer logout', () => {
         cy.login();
-        cy.get('button').click();
+        //cy.get('button').click();
+        Profile.clicarNoBotaoLogout();
 
     });
 
