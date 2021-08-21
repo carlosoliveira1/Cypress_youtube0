@@ -7,10 +7,6 @@ import NewIncident from '../support/pages/NewIncident';
 
 
 
-
-
-
-
 describe('Ongs', () => {
     it('Devem pode realizar um cadastro', () => {
         Register.acessarCadastro();
@@ -25,7 +21,6 @@ describe('Ongs', () => {
 
     it('devem poder fazer logout', () => {
         cy.login();
-        //cy.get('button').click();
         Profile.clicarNoBotaoLogout();
 
     });
@@ -34,28 +29,10 @@ describe('Ongs', () => {
     it('devem poder cadastrar novos casos', () => {
         cy.login()
 
-
-        //cy.get('.button').click();
         Profile.clicarBotãocadastrarNovosCasos();
-        // cy.get('[placeholder="Título do caso"]').type('Animal sem moradia');
-        // cy.get('textarea').type('Moradia');
-        // cy.get('[placeholder="Valor em reais"]').type(200);
 
-        // //POST 200/incidents
-        // cy.route('POST', '**/incidents').as('newIncident');
-
-
-        // cy.get('.button').click();
-
-        // cy.wait('@newIncident').then((xhr) => {
-        //     expect(xhr.status).to.eq(200);
-        //     expect(xhr.response.body).has.property('id');
-        //     expect(xhr.response.body).has.not.null;
-
-        // })
         NewIncident.preencherCadastroDeCasos();
         NewIncident.validarCadastroDeCasos();
-
 
     })
 
@@ -63,23 +40,8 @@ describe('Ongs', () => {
         cy.createNewIncident();
         cy.login();
 
-        cy.route('DELETE', '**/incidents/*').as('deleteIncident');
-
-
-        cy.get('li > button > svg').click();
-
-        cy.wait('@deleteIncident').then((xhr) => {
-            expect(xhr.status).to.eq(204);
-            expect(xhr.response.body).to.be.empty;
-
-
-        })
-
-
-
-
-
-
+        Profile.clicarNoBotaoExcluirUmcaso();
+        Profile.validarxEclusaoDeUmcasoComSucesso();
     })
 
 
