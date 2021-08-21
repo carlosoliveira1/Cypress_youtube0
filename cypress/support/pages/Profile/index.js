@@ -6,6 +6,11 @@ class Profile {
 
     }
 
+    clicarBotãocadastrarNovosCasos(){
+        cy.get(el.buttonNewIncident).click();
+
+    }
+
 }
 
 export default new Profile();

@@ -1,5 +1,6 @@
 export const ELEMENTS = {
-    buttonLogout: 'button'
+    buttonLogout: 'button',
+    buttonNewIncident: '.button'
 
 
 }
